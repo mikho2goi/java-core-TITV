@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class phuongTrinhBacHai {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Nhap vao 1 so tu 2 den 8");
+	int so = sc.nextInt();
+switch (so) {
+case 2: {
+	System.out.println("thu 2");
+	
+}
+default:
+	System.out.println("Nhap so bi loi");
+}
+	
+}
+}

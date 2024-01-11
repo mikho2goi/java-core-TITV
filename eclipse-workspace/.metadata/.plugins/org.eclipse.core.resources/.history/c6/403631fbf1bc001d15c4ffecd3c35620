@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class ViDu {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhap 1 so n de chuyen sang dang nhi phan");
+		
+		int n = sc.nextInt();
+		String nhiPhan = "";
+		
+		while(n>0) {
+			nhiPhan = n%10 + nhiPhan ;
+			n/=10;
+		}
+		System.out.println(nhiPhan);
+		
+	}
+}

@@ -1,0 +1,10 @@
+
+public class test {
+	public static void main(String[] args) {
+		System.out.println("Test");
+		MayTinhCasioFX500 mfx500 = new MayTinhCasioFX500();
+		MayTinhVinaCal500 mvn500 = new MayTinhVinaCal500();
+		
+		System.out.println(mvn500.chia(6, 3));
+	}
+}

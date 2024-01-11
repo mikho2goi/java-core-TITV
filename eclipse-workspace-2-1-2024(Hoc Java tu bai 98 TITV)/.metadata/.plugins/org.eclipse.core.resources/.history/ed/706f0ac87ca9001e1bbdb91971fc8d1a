@@ -1,0 +1,52 @@
+package controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.List;
+
+import javax.swing.JFileChooser;
+
+import view.NotePadView;
+
+public class MyNotePadController implements ActionListener{
+	private NotePadView View ;
+	
+	public MyNotePadController(NotePadView view) {
+		View = view;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String button = e.getActionCommand();
+		JFileChooser fc = new JFileChooser();
+		if(button.equals("Open")) {
+			int returnVal = fc.showOpenDialog(this.View); 
+			if(returnVal == JFileChooser.APPROVE_OPTION) {
+				File file = fc.getSelectedFile();
+				String fileName = file.getName();
+				this.View.lblNewLabel.setText(file.getAbsolutePath());
+				if(fileName.endsWith(".txt")) {
+					try {
+						List<String> allText = Files.readAllLines(file.toPath(),StandardCharsets.UTF_8);
+						String result = "";
+						for (String line : allText) {
+							result += line;
+						}
+						this.View.textArea.setText(result);
+						
+					} catch (Exception e2) {
+						e2.printStackTrace();
+					}
+				}
+			}else {
+				
+			}
+		}else if(button.equals("Save")) {
+			
+		}
+	}
+	
+}

@@ -1,0 +1,118 @@
+package controller;
+
+import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.swing.Action;
+import javax.swing.ButtonModel;
+import javax.swing.JOptionPane;
+
+import model.ThiSinh;
+import model.Tinh;
+import view.QLSVView;
+
+public class QLSVController implements Action{
+	QLSVView view;
+	
+	public QLSVController(QLSVView view) {
+		this.view = view;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String button = e.getActionCommand();
+		JOptionPane.showMessageDialog(view, "Bạn vừa nhấn vào "+button);
+		if (button.equals("Thêm")) {
+			this.view.xoaForm();
+			this.view.model.setLuaChon("Thêm");
+		}else if(button.equals("Lưu")) {
+			 try {
+				 //lấy dữ liệu
+				String maThiSinh = this.view.textFieldMaThiSinh.getText();
+				String tenThiSinh = this.view.textFieldHoTen.getText();
+				int queQuan = this.view.comboBox_queQuan_thongTin.getSelectedIndex();
+				Tinh tinh = Tinh.getTinhById(queQuan);
+				DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+				Date ngaySinh = null;
+				try {
+					ngaySinh = df.parse(this.view.textFieldNgaySinh.getText());
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
+				
+				boolean gioiTinh = true;
+				ButtonModel chonGioiTinh = this.view.btnGroup.getSelection();
+				if(chonGioiTinh.equals(this.view.rdbtnNam.getModel())) {
+					gioiTinh = true;
+				}else {
+					gioiTinh = false;
+				}
+				float diemMon1 = Float.valueOf(this.view.textFieldMon1.getText());
+				float diemMon2 = Float.valueOf(this.view.textFieldMon2.getText());
+				float diemMon3 = Float.valueOf(this.view.textFieldMon3.getText());
+				
+				ThiSinh ts = new ThiSinh(maThiSinh, tenThiSinh,tinh, ngaySinh, gioiTinh, diemMon1, diemMon2, diemMon3);
+				if(this.view.model.getLuaChon().equals(" ")||this.view.model.getLuaChon().equals("Thêm")) {
+					this.view.themThiSinh(ts);
+				}else if(this.view.model.getLuaChon().equals("Cập Nhật")) {
+					this.view.capNhatThiSinh(ts);
+				}
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			}
+		}else if(button.equals("Cập Nhật")){
+			this.view.hienThiThongTinThiSinhDaChon();
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	@Override
+	public Object getValue(String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void putValue(String key, Object value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setEnabled(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void addPropertyChangeListener(PropertyChangeListener listener) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removePropertyChangeListener(PropertyChangeListener listener) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+}

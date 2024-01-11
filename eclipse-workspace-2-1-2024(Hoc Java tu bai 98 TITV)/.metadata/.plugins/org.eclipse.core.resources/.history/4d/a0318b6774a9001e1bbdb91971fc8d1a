@@ -1,0 +1,25 @@
+package controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import view.NotePadView;
+
+public class MyNotePadController implements ActionListener{
+	NotePadView View = new NotePadView();
+	
+	public MyNotePadController(NotePadView view) {
+		this.View = view;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String button = e.getActionCommand();
+		if(button.equals("Open")) {
+			
+		}else if(button.equals("Save")) {
+			
+		}
+	}
+	
+}

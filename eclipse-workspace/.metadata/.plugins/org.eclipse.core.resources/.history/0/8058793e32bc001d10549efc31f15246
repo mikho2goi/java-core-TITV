@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class phuongTrinhBacHai {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhap vao 1 so tu 2 den 8");
+		int so = sc.nextInt();
+		switch (so) {
+		case 2: {
+			System.out.println("thu hai");
+		}
+		case 3: {
+			System.out.println("thu ba");
+		}
+		case 4: {
+			System.out.println("thu tu");
+		}
+		case 5: {
+			System.out.println("thu nam");
+		}
+		case 6: {
+			System.out.println("thu sau");
+		}
+		case 7: {
+			System.out.println("thu bay");
+		}
+		case 8: {
+			System.out.println("chu nhat");
+		}
+		default:
+				System.out.println("Nhap so ngu!");
+		}
+
+	}
+}

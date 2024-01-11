@@ -1,0 +1,35 @@
+package controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+
+import view.NotePadView;
+
+public class MyNotePadController implements ActionListener{
+	private NotePadView View ;
+	
+	public MyNotePadController(NotePadView view) {
+		View = view;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String button = e.getActionCommand();
+		JFileChooser fc = new JFileChooser();
+		if(button.equals("Open")) {
+			int returnVal = fc.showOpenDialog(this.View); 
+			if(returnVal == JFileChooser.APPROVE_OPTION) {
+				File file = fc.getSelectedFile();
+				this.View.lblNewLabel.setText(file.getAbsolutePath());
+			}else {
+				
+			}
+		}else if(button.equals("Save")) {
+			
+		}
+	}
+	
+}

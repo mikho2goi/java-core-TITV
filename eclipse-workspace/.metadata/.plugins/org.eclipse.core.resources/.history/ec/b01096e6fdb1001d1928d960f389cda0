@@ -1,0 +1,7 @@
+
+public class ViDu {
+public static void main(String[] args) {
+	String HoTen = "LeMinhThien";
+	System.out.println("dep trai la "+ HoTen);
+}
+}

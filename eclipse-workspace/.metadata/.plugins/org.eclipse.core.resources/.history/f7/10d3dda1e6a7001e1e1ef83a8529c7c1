@@ -1,0 +1,6 @@
+package snippet;
+
+public class Snippet {
+	printf("%d",i);
+}
+

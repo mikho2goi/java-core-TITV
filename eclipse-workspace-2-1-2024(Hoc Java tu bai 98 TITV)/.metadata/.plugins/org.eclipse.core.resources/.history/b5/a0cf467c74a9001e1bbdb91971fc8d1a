@@ -1,0 +1,86 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import controller.MyNotePadController;
+import model.MyNotePadModel;
+import java.awt.BorderLayout;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.UIManager;
+
+import java.awt.Dimension;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JButton;
+
+public class NotePadView extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private MyNotePadModel model;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+					NotePadView frame = new NotePadView();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	/**
+	 * Create the frame.
+	 */
+	public NotePadView() {
+		this.model = new MyNotePadModel();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 718, 485);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.setLocationRelativeTo(null);
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("Monospaced", Font.PLAIN, 18));
+		
+		JScrollPane scrollPane = new JScrollPane(textArea);
+		contentPane.add(scrollPane, BorderLayout.CENTER);
+		
+		JPanel panel = new JPanel();
+		panel.setPreferredSize(new Dimension(17, 51));
+		contentPane.add(panel, BorderLayout.SOUTH);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNewLabel.setBounds(23, 11, 93, 29);
+		panel.add(lblNewLabel);
+		
+		JButton btnOpen = new JButton("Open");
+		btnOpen.addActionListener(actionListener);
+		btnOpen.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnOpen.setBounds(443, 11, 113, 29);
+		panel.add(btnOpen);
+		
+		JButton btnSave = new JButton("Save");
+		btnSave.addActionListener(actionListener);
+		btnSave.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnSave.setBounds(566, 11, 102, 29);
+		panel.add(btnSave);
+		
+
+	}
+}

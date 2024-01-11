@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;tenThiSinh&apos; in &apos;view.QLSVView.thucHienTim()&apos; to &apos;maThiSinh&apos;&#x0D;&#x0A;- Original project: &apos;Java_100_QuanLySinhVien&apos;&#x0D;&#x0A;- Original element: &apos;view.QLSVView.thucHienTim().tenThiSinh&apos;&#x0D;&#x0A;- Renamed element: &apos;tenThiSinh&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;tenThiSinh&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;view{QLSVView.java[QLSVView~thucHienTim@tenThiSinh!14897!14946!14904!14913!QString;!0!false" name="maThiSinh" references="true" stamp="1704684838867" version="1.0"/>
+</session>

@@ -1,0 +1,11 @@
+
+public class Kieudulieutrongjava {
+	public static void main(String[] args) {
+		String tenSach = "LapTrinhChoNguoiMu";
+		int namXuatBan = 2023;
+		double giaBan = 3008.02;
+		boolean trangThai = true;
+		char maKho = 'M';
+		System.out.println("ten sach "+ tenSach+"\ngia ban "+ giaBan);
+	}
+}

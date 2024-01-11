@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;jpoupMenu&apos; in &apos;view.MenuExampleView&apos; to &apos;jPoupMenu&apos;&#x0D;&#x0A;- Original project: &apos;Java_92(MenuMouseRightClick)&apos;&#x0D;&#x0A;- Original element: &apos;view.MenuExampleView.jpoupMenu&apos;&#x0D;&#x0A;- Renamed element: &apos;view.MenuExampleView.jPoupMenu&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;jpoupMenu&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;view{MenuExampleView.java[MenuExampleView^jpoupMenu" name="jPoupMenu" references="true" setter="false" stamp="1704039211366" textual="true" version="1.0"/>
+</session>
